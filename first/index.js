@@ -10,6 +10,9 @@ class Sprite {
     constructor(position)
     {
         this.position = position;
+
+        this.width = 30;
+        this.height = 150;
     }
     draw(){
         c.fillStyle = "red";
@@ -23,6 +26,12 @@ const player = new Sprite({
     y :0,
 });
 
+const enemy = new Sprite({
+    x :400,
+    y :100,
+})
+
 console.log(player);
 
-player.draw;
+player.draw();
+enemy.draw();
