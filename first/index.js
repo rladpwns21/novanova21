@@ -7,31 +7,65 @@ canvas.height = 576;
 c.fillRect(0, 0, canvas.width, canvas.height);
 
 class Sprite {
-    constructor(position)
+    constructor({position, velocity})
     {
         this.position = position;
+
+        this.velocity = velocity;
 
         this.width = 30;
         this.height = 150;
     }
+    
     draw(){
         c.fillStyle = "red";
-        c.fillRect(this.position.x, this.position.y, this.width, this.height);
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
+
+    // update() {
+    //     this.draw();
+
+    //     this.position.y += 10;
+    // }
 }
 
 
-const player = new Sprite({
-    x :0,
-    y :0,
+const player = new Sprite( {
+    position: {
+        x :0,
+        y :0,
+    },
+    // velocity: {
+    //     x :0,
+    //     y :0,
+    // }
 });
 
-const enemy = new Sprite({
-    x :400,
-    y :100,
-})
+// const enemy = new Sprite( {
+//     position: {
+//         x :400,
+//         y :100,
+//     },
+//     velocity: {
+//         x :0,
+//         y :0,
+//     }
+// })
 
 console.log(player);
 
+// player.draw();
+// enemy.draw();
+
+// function animate() {
+//     window.requestAnimationFrame(animate);
+
+//     c.fillStyle = "black";
+//     c.fill(0, 0, canvas.width, canvas.height);
+
+//     player.update();
+//     // enemy.update();
+// }
+
+animate();
 player.draw();
-enemy.draw();
